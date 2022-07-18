@@ -1,0 +1,7 @@
+/* cyrillic-ext */
+@font-face {
+  font-family: "Neueplak, sans-serif";
+  src: url(../../fonts/neue/Neue\ Plak\ Regular.ttf)
+      format("ttf");
+  font-weight: normal;
+}

@@ -1,0 +1,163 @@
+
+/*
+ |--------------------------------------------------------------------------
+ | TailwindCSS Directives
+ |--------------------------------------------------------------------------
+ |
+ | Import TailwindCSS directives and swipe out at build-time with all of
+ | the styles it generates based on your configured design system.
+ |
+ | Please check this link for more details:
+ | https://tailwindcss.com/docs/installation#include-tailwind-in-your-css
+ |
+ */
+@import "./_tailwind.css";
+
+/*
+  |--------------------------------------------------------------------------
+  | Colors
+  |--------------------------------------------------------------------------
+  |
+  | Configuration of the main and dark-mode colors.
+  |
+  | Please check this link for more details:
+  | https://tailwindcss.com/docs/customizing-colors#using-css-variables
+  |
+  */
+@import "./_colors.css";
+
+/*
+ |--------------------------------------------------------------------------
+ | Fonts
+ |--------------------------------------------------------------------------
+ |
+ | Import all fonts used in the template, the font configuration can be
+ | seen in "tailwind.config.js".
+ |
+ | Please check this link for more details:
+ | https://tailwindcss.com/docs/theme
+ |
+ */
+@import "./fonts/_roboto.css";
+@import "./fonts/_montserrat.css";
+@import "./fonts/_neue-plak.css";
+
+/*
+ |--------------------------------------------------------------------------
+ | Mixins
+ |--------------------------------------------------------------------------
+ |
+ | Import helper mixins.
+ |
+ */
+@import "@left4code/tw-starter/dist/css/mixins/_media.css";
+
+/*
+ |--------------------------------------------------------------------------
+ | 3rd Party Libraries
+ |--------------------------------------------------------------------------
+ |
+ | Import 3rd party library CSS files.
+ |
+ */
+@import "@left4code/tw-starter/dist/css/_breadcrumb.css";
+@import "@left4code/tw-starter/dist/css/_accordion.css";
+@import "@left4code/tw-starter/dist/css/_alert.css";
+@import "@left4code/tw-starter/dist/css/_btn.css";
+@import "@left4code/tw-starter/dist/css/_dropdown.css";
+@import "@left4code/tw-starter/dist/css/_file.css";
+@import "@left4code/tw-starter/dist/css/_form-reset.css";
+@import "@left4code/tw-starter/dist/css/_form-check.css";
+@import "@left4code/tw-starter/dist/css/_form-control.css";
+@import "@left4code/tw-starter/dist/css/_form-help.css";
+@import "@left4code/tw-starter/dist/css/_form-inline.css";
+@import "@left4code/tw-starter/dist/css/_form-label.css";
+@import "@left4code/tw-starter/dist/css/_form-select.css";
+@import "@left4code/tw-starter/dist/css/_image-fit.css";
+@import "@left4code/tw-starter/dist/css/_input-group.css";
+@import "@left4code/tw-starter/dist/css/_intro.css";
+@import "@left4code/tw-starter/dist/css/_modal.css";
+@import "@left4code/tw-starter/dist/css/_pagination.css";
+@import "@left4code/tw-starter/dist/css/_progress.css";
+@import "@left4code/tw-starter/dist/css/_scrollbar.css";
+@import "@left4code/tw-starter/dist/css/_tab.css";
+@import "@left4code/tw-starter/dist/css/_table.css";
+@import "@left4code/tw-starter/dist/css/_typing-dots.css";
+@import "@left4code/tw-starter/dist/css/_zoom-in.css";
+@import "@left4code/tw-starter/dist/css/_box.css";
+@import "highlight.js/styles/github.css";
+@import "tippy.js/dist/tippy.css";
+@import "tippy.js/themes/light.css";
+@import "tippy.js/dist/svg-arrow.css";
+@import "tippy.js/animations/shift-away.css";
+@import "toastify-js/src/toastify.css";
+@import "dropzone/dist/dropzone.css";
+@import "zoom-vanilla.js/dist/zoom.css";
+@import "tabulator-tables/dist/css/tabulator.css";
+@import "tom-select/dist/css/tom-select.css";
+@import "tiny-slider/dist/tiny-slider.css";
+@import "simplebar/src/simplebar.css";
+
+/*
+ |--------------------------------------------------------------------------
+ | Components
+ |--------------------------------------------------------------------------
+ |
+ | Import CSS components.
+ |
+ */
+@import "./components/_global.css";
+@import "./components/_top-bar.css";
+@import "./components/_login.css";
+@import "./components/_table-report.css";
+@import "./components/_report-chart.css";
+@import "./components/_search.css";
+@import "./components/_notification.css";
+@import "./components/_report-box.css";
+@import "./components/_report-box-2.css";
+@import "./components/_report-box-3.css";
+@import "./components/_report-box-4.css";
+@import "./components/_content.css";
+@import "./components/_top-nav.css";
+@import "./components/_side-nav.css";
+@import "./components/_breadcrumb.css";
+@import "./components/_toastify.css";
+@import "./components/_toastify-content.css";
+@import "./components/_lucide-icon.css";
+@import "./components/_top-bar-boxed.css";
+@import "./components/_mobile-menu.css";
+@import "./components/_inbox-filter.css";
+@import "./components/_inbox.css";
+@import "./components/_chat.css";
+@import "./components/_chat-dropdown.css";
+@import "./components/_news.css";
+@import "./components/_pricing-tabs.css";
+@import "./components/_error-page.css";
+@import "./components/_search-result.css";
+@import "./components/_notification-content.css";
+@import "./components/_report-maps.css";
+@import "./components/_pos-dropdown.css";
+@import "./components/_post.css";
+@import "./components/_litepicker.css";
+@import "./components/_tiny-slider.css";
+@import "./components/_tippy.css";
+@import "./components/_tabulator.css";
+@import "./components/_tom-select.css";
+@import "./components/_dropzone.css";
+@import "./components/_ckeditor.css";
+@import "./components/_zoom-vanilla.css";
+@import "./components/_dark-mode-switcher.css";
+@import "./components/_hljs.css";
+@import "./components/_source-preview.css";
+@import "./components/_full-calendar.css";
+@import "./components/_pristine.css";
+@import "./components/tracker.css";
+
+
+.dark .box {
+  background-color:  #0b0d12;
+}
+
+.text-slate-500 {
+  color: #17ab9c !important;
+}

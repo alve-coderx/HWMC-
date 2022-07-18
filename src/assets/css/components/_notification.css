@@ -1,0 +1,15 @@
+.notification {
+    @apply relative text-slate-600;
+    &.notification--light {
+        @apply text-white/70;
+    }
+    .notification__icon {
+        @apply w-5 h-5;
+    }
+    &.notification--bullet:before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        @apply rounded-full absolute top-[-2px] right-0 bg-danger;
+    }
+}

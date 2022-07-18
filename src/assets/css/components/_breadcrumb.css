@@ -1,0 +1,11 @@
+.breadcrumb {
+    &.breadcrumb-light {
+        @apply h-full ml-10 pl-10 border-l border-white/[0.08];
+        .active {
+            @apply !text-white/70;
+        }
+        @include media-breakpoint-down(md) {
+            @apply ml-0 pl-0 border-l-0;
+        }
+    }
+}

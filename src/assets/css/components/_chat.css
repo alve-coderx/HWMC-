@@ -1,0 +1,20 @@
+.chat {
+    .chat__chat-list {
+        @apply h-[525px];
+    }
+    .chat__user-list {
+        @apply h-[525px];
+    }
+    .chat__box {
+        @apply h-[782px];
+        .chat__box__text-box {
+            @apply max-w-[49%];
+            @include media-breakpoint-down(sm) {
+                @apply max-w-[90%];
+            }
+        }
+    }
+    .chat__box__input {
+        @apply h-[46px];
+    }
+}

@@ -1,0 +1,14 @@
+.post {
+    .post__tabs {
+        @apply border-transparent dark:border-transparent;
+        .nav-item .nav-link {
+            @apply flex justify-center items-center text-slate-500;
+            &:hover:not(.disabled):not(.active):hover {
+                @apply border-transparent bg-transparent text-slate-600 dark:bg-transparent dark:text-slate-300;
+            }
+            &.active {
+                @apply text-primary border-transparent dark:bg-darkmode-600 dark:border-transparent dark:text-white;
+            }
+        }
+    }
+}

@@ -1,0 +1,14 @@
+.toastify {
+    background: none;
+    @apply shadow-none text-slate-700 p-0;
+    @include media-breakpoint-down(md) {
+        max-width: calc(100% - 30px);
+    }
+    .toast-close {
+        @apply text-transparent absolute opacity-100 inset-y-0 right-0 pr-3 flex items-center;
+        &:before {
+            content: "×";
+            @apply block text-slate-500 text-3xl -mt-1.5 font-light;
+        }
+    }
+}

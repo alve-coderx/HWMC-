@@ -1,0 +1,27 @@
+.inbox {
+    .inbox__item {
+        @apply transition duration-200 ease-in-out transform cursor-pointer;
+        &:hover {
+            transform: scale(1.02, 1.02);
+            @apply relative z-20 shadow-md border-0 rounded;
+        }
+        &.inbox__item--active {
+            @apply bg-white text-slate-800 dark:text-slate-300 dark:bg-darkmode-600;
+            .inbox__item--sender {
+                @apply font-medium;
+            }
+            .inbox__item--highlight {
+                @apply font-medium;
+            }
+            .inbox__item--time {
+                @apply font-medium;
+            }
+        }
+    }
+    .form-check-input {
+        @apply border-slate-400;
+        &:checked {
+            @apply border-primary;
+        }
+    }
+}

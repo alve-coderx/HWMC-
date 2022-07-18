@@ -1,0 +1,11 @@
+.report-chart {
+  @apply relative;
+  &:before {
+    content: "";
+    @apply block absolute w-16 left-0 top-0 bottom-0 ml-10 mb-7 bg-gradient-to-r from-white via-white/80 to-transparent dark:from-[#00000000];
+  }
+  &:after {
+    content: "";
+    @apply block absolute w-16 right-0 top-0 bottom-0 mb-7 bg-gradient-to-l from-white via-white/80 to-transparent dark:from-[#00000000];
+  }
+}

@@ -1,0 +1,6 @@
+.top-bar {
+    @apply flex items-center mb-2;
+    background: #01010100;
+    height: 67px;
+    z-index: 51;
+}

@@ -1,0 +1,102 @@
+/* Default colors */
+:root {
+    --color-primary: theme("colors.rgb.blue.800");
+    --color-secondary: theme("colors.rgb.slate.200");
+    --color-success: theme("colors.rgb.lime.500");
+    --color-info: theme("colors.rgb.cyan.500");
+    --color-warning: theme("colors.rgb.yellow.400");
+    --color-pending: theme("colors.rgb.orange.500");
+    --color-danger: theme("colors.rgb.red.600");
+    --color-light: theme("colors.rgb.slate.100");
+    --color-dark: theme("colors.rgb.slate.800");
+    --color-slate-50: theme("colors.rgb.slate.50");
+    --color-slate-100: theme("colors.rgb.slate.100");
+    --color-slate-200: theme("colors.rgb.slate.200");
+    --color-slate-300: theme("colors.rgb.slate.300");
+    --color-slate-400: theme("colors.rgb.slate.400");
+    --color-slate-500: theme("colors.rgb.slate.500");
+    --color-slate-600: theme("colors.rgb.slate.600");
+    --color-slate-700: theme("colors.rgb.slate.700");
+    --color-slate-800: theme("colors.rgb.slate.800");
+    --color-slate-900: theme("colors.rgb.slate.900");
+}
+
+/* Default dark-mode colors */
+.dark {
+    --color-primary: theme("colors.rgb.blue.700");
+    --color-slate-500: theme("colors.rgb.slate.400");
+    --color-darkmode-50: 87 103 132;
+    --color-darkmode-100: 74 90 121;
+    --color-darkmode-200: 65 81 114;
+    --color-darkmode-300: 53 69 103;
+    --color-darkmode-400: 48 61 93;
+    --color-darkmode-500: 41 53 82;
+    --color-darkmode-600: 40 51 78;
+    --color-darkmode-700: 35 45 69;
+    --color-darkmode-800: 27 37 59;
+    --color-darkmode-900: 15 23 42;
+}
+
+/* Theme 1 colors */
+.theme-1 {
+    --color-primary: theme("colors.rgb.emerald.900");
+    --color-secondary: theme("colors.rgb.slate.200");
+    --color-success: theme("colors.rgb.emerald.600");
+    --color-info: theme("colors.rgb.cyan.500");
+    --color-warning: theme("colors.rgb.yellow.400");
+    --color-pending: theme("colors.rgb.amber.500");
+    --color-danger: theme("colors.rgb.rose.600");
+    --color-light: theme("colors.rgb.slate.100");
+    --color-dark: theme("colors.rgb.slate.800");
+    &.dark {
+        --color-primary: theme("colors.rgb.emerald.800");
+    }
+}
+
+/* Theme 2 colors */
+.theme-2 {
+    --color-primary: theme("colors.rgb.blue.900");
+    --color-secondary: theme("colors.rgb.slate.200");
+    --color-success: theme("colors.rgb.teal.600");
+    --color-info: theme("colors.rgb.cyan.500");
+    --color-warning: theme("colors.rgb.amber.500");
+    --color-pending: theme("colors.rgb.orange.500");
+    --color-danger: theme("colors.rgb.red.700");
+    --color-light: theme("colors.rgb.slate.100");
+    --color-dark: theme("colors.rgb.slate.800");
+    &.dark {
+        --color-primary: theme("colors.rgb.blue.800");
+    }
+}
+
+/* Theme 3 colors */
+.theme-3 {
+    --color-primary: theme("colors.rgb.cyan.900");
+    --color-secondary: theme("colors.rgb.slate.200");
+    --color-success: theme("colors.rgb.teal.600");
+    --color-info: theme("colors.rgb.cyan.500");
+    --color-warning: theme("colors.rgb.amber.500");
+    --color-pending: theme("colors.rgb.amber.600");
+    --color-danger: theme("colors.rgb.red.700");
+    --color-light: theme("colors.rgb.slate.100");
+    --color-dark: theme("colors.rgb.slate.800");
+    &.dark {
+        --color-primary: theme("colors.rgb.cyan.800");
+    }
+}
+
+/* Theme 4 colors */
+.theme-4 {
+    --color-primary: theme("colors.rgb.indigo.900");
+    --color-secondary: theme("colors.rgb.slate.200");
+    --color-success: theme("colors.rgb.emerald.600");
+    --color-info: theme("colors.rgb.cyan.500");
+    --color-warning: theme("colors.rgb.yellow.500");
+    --color-pending: theme("colors.rgb.orange.600");
+    --color-danger: theme("colors.rgb.red.700");
+    --color-light: theme("colors.rgb.slate.100");
+    --color-dark: theme("colors.rgb.slate.800");
+    &.dark {
+        --color-primary: theme("colors.rgb.indigo.700");
+    }
+}

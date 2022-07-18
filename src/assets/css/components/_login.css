@@ -1,0 +1,26 @@
+.login {
+    @apply relative overflow-hidden bg-white dark:bg-darkmode-600;
+    @include media-breakpoint-down(xl) {
+        @apply bg-primary dark:bg-darkmode-800;
+    }
+    &:before {
+        content: "";
+        @apply w-[57%] -mt-[28%] -mb-[15%] -ml-[13%] absolute inset-y-0 left-0 transform rotate-[-4deg] bg-primary/20 rounded-[100%] dark:bg-darkmode-400;
+        @include media-breakpoint-down(xl) {
+            @apply hidden;
+        }
+    }
+    &:after {
+        content: "";
+        @apply w-[57%] -mt-[20%] -mb-[12%] -ml-[13%] absolute inset-y-0 left-0 transform rotate-[-4deg] bg-primary rounded-[100%] dark:bg-darkmode-700;
+        @include media-breakpoint-down(xl) {
+            @apply hidden;
+        }
+    }
+    .login__input {
+        min-width: 350px;
+        @include media-breakpoint-down(xl) {
+            @apply min-w-full;
+        }
+    }
+}

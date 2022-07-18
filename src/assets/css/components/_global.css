@@ -1,0 +1,24 @@
+html {
+  @apply bg-[#0B0D12];
+  &.dark {
+    @apply bg-[#0B0D12];
+    body {
+      @apply text-white;
+      *,
+      ::before,
+      ::after {
+        @apply border-white/5;
+      }
+    }
+  }
+  body {
+    @apply antialiased overflow-x-hidden pl-8 font-roboto text-sm text-white bg-[#0B0D12];
+    @include media-breakpoint-down(sm) {
+      @apply px-3;
+    }
+  }
+}
+
+.ant-progress-text{
+  @apply text-white text-2xl font-bold !important;
+}

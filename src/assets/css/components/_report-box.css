@@ -1,0 +1,12 @@
+.report-box {
+    @apply relative;
+    .report-box__icon {
+        width: 28px;
+        height: 28px;
+    }
+    .report-box__indicator {
+        padding-top: 3px;
+        padding-bottom: 3px;
+        @apply flex rounded-full text-[#14b8a6] text-xs pl-2 pr-1 items-center font-medium;
+    }
+}

@@ -1,0 +1,3 @@
+.zoom-overlay {
+    @apply bg-black/75 dark:bg-black/40;
+}

@@ -1,0 +1,6 @@
+.source-preview {
+  @apply bg-slate-100 px-4 py-2.5;
+  .hljs {
+    @apply text-xs -mt-[20px] -mb-[40px] leading-relaxed bg-slate-100 dark:bg-slate-200;
+  }
+}
