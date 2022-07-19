@@ -62,9 +62,9 @@ function Main(props) {
       {/* BEGIN: Top Bar */}
       <div style={{backgroundColor : '#0b0d12',marginBottom:'10px'}} className="flex px-2 sticky justify-around top-16 rounded-2xl top-bar md:top-0 ">
      
-         <div>
+         <div className="bg-white sm:bg-transparent" style={{borderRadius: "11px"}}>
             {/* BEGIN: Search */}
-            <div className="intro-x relative mr-3 sm:mr-6">
+            <div className=" relative mr-3 sm:mr-6">
               <div className="search hidden sm:block">
                 <input
                   type="text"

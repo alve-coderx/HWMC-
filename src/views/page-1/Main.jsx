@@ -73,7 +73,7 @@ function Main() {
   return (
     <>
     <div className="grid lg:grid-cols-3 md:grid-cols-3 gap-4 font-neuePlak" style={{minWidth: "380px",paddingRight:"38px"}}>
-    <div className="lg:col-span-2 md:col-span-2">
+    <div className="lg:col-span-2 md:col-span-2 lg:mr-5">
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
           {/* ----------------- First Card Start ----------------- */}
           <div className="intro-y w-full h-full"> 
@@ -178,7 +178,7 @@ function Main() {
 
           <div className="lg:col-span-1 md:col-span-1">
           <div className="mb-3">
-                <div className="flex items-center box px-5 py-3 ml-4 flex-1 zoom-in mb-2">
+                <div className="flex items-center box px-5 py-3 flex-1 zoom-in mb-2">
                   <div>
                     <div className="flex items-center">
                       <div className="font-medium text-dark dark:text-white">
@@ -198,7 +198,7 @@ function Main() {
                       <AiOutlineArrowRight/>
                   </div>
                 </div>
-                <div className="flex items-center box px-5 py-3 ml-4 flex-1 zoom-in mb-2" style={{background : '#8368d1'}}>
+                <div className="flex items-center box px-5 py-3  flex-1 zoom-in mb-2" style={{background : '#8368d1'}}>
                   <div>
                     <div className="flex items-center">
                       <div className="font-medium text-dark dark:text-white">
@@ -218,7 +218,7 @@ function Main() {
                       <AiOutlineArrowRight/>
                   </div>
                 </div>
-                <div className="flex items-center box px-5 py-3 ml-4 flex-1 zoom-in mb-2">
+                <div className="flex items-center box px-5 py-3  flex-1 zoom-in mb-2">
                   <div>
                     <div className="flex items-center">
                       <div className="font-medium text-dark dark:text-white">
