@@ -12,11 +12,34 @@ import {
 } from "@/base-components";
 import { faker as $f } from "@/utils";
 import * as $_ from "lodash";
-import classnames from "classnames";
 import DarkModeSwitcher from "@/components/dark-mode-switcher/Main";
 import Tracker from "../Tracker";
+import { Transition } from "react-transition-group";
+import { useLocation, useNavigate } from "react-router-dom";
+import { helper as $h } from "@/utils";
+import { sideMenu as useSideMenuStore } from "@/stores/side-menu";
+import { useRecoilValue } from "recoil";
+import { nestedMenu } from "@/layouts/side-menu";
+import { toggleMobileMenu, linkTo, enter, leave } from "./index";
+import classnames from "classnames";
+import dom from "@left4code/tw-starter/dist/js/dom";
+import SimpleBar from "simplebar";
+
+
 function Main(props) {
   const [searchDropdown, setSearchDropdown] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [formattedMenu, setFormattedMenu] = useState([]);
+  const sideMenuStore = useRecoilValue(useSideMenuStore);
+  const mobileMenu = () => nestedMenu($h.toRaw(sideMenuStore.menu), location);
+  const [activeMobileMenu, setActiveMobileMenu] = useState(false);
+
+  useEffect(() => {
+    new SimpleBar(dom(".mobile-menu .scrollable")[0]);
+    setFormattedMenu(mobileMenu());
+  }, [sideMenuStore, location.pathname]);
+
   const showSearchDropdown = () => {
     setSearchDropdown(true);
   };
@@ -29,15 +52,16 @@ function Main(props) {
 
   },[])
   return (
-    <>
+    <div className="pr-10 md:pr-0 lg:pr-0">
       {/* BEGIN: Top Bar */}
-      <div className="lg:hidden md:hidden sm:inline top-bar sticky">
+      <div className="lg:hidden md:hidden sm:inline top-bar sticky" style={{marginTop : '-12px'}}>
         <div className="w-full xl:w-9/12 2xl:w-11/12 "> 
           <Tracker />
         </div>
       </div>    
       {/* BEGIN: Top Bar */}
-      <div className="flex rounded-2xl top-bar sticky top-16 justify-around md:top-0" style={{backgroundColor : '#0b0d12'}}>
+      <div style={{backgroundColor : '#0b0d12',marginBottom:'10px'}} className="flex px-2 sticky justify-around top-16 rounded-2xl top-bar md:top-0 ">
+     
          <div>
             {/* BEGIN: Search */}
             <div className="intro-x relative mr-3 sm:mr-6">
@@ -65,7 +89,7 @@ function Main(props) {
                   "search-result": true,
                   show: searchDropdown,
                 })}
-              >         
+              >          
               </div>
             </div>
             {/* END: Search  */}
@@ -77,7 +101,7 @@ function Main(props) {
               className="min-w-fit -intro-x mr-auto hidden sm:flex justify-center items-center"
             >     
               <div className="top-menu__title">   
-                <a href="#" className="text-xs md:text-sm text-dark dark:text-white">Overview Dashboard</a>
+                <a href="#" className="text-xs md:text-sm text-white dark:text-white">Overview Dashboard</a>
               </div>
             </nav>
         {/* END: MainMenu */}
@@ -85,7 +109,7 @@ function Main(props) {
           <Tracker />
         </div>
 
-        <div className="flex">
+        <div className="flex items-center">
           <button  className="btn btn-custom shadow-lg focus:outline-none focus:ring-0 active:bg-gray-700 mr-5" onClick={()=>{
             
             console.log("Clicked");
@@ -119,10 +143,190 @@ function Main(props) {
           <div className="min-w-fit mr-auto flex justify-end">
             <DarkModeSwitcher />
           </div>
+          
+        </div>
+        <div
+          className={classnames(
+            {
+            "mobile-menu lg:hidden md:hidden": true,
+            "mobile-menu--active": activeMobileMenu,
+          })}
+          >
+              <a
+                href="#"
+                onClick={(e) => e.preventDefault()}
+                className="mobile-menu-toggler"
+              >
+                <Lucide
+                  icon="BarChart2"
+                  className="w-8 h-8 text-white transform -rotate-90"
+                  onClick={() => {
+                    toggleMobileMenu(activeMobileMenu, setActiveMobileMenu);
+                  }}
+                />
+              </a>
+
+            <div className="scrollable" style={{backgroundColor: 'rgb(11, 13, 18)'}}>
+              <a
+                href="#"
+                onClick={(e) => e.preventDefault()}
+                className="mobile-menu-toggler"
+              >
+                <Lucide
+                  icon="XCircle"
+                  className="w-8 h-8 text-white transform -rotate-90"
+                  onClick={() => {
+                    toggleMobileMenu(activeMobileMenu, setActiveMobileMenu);
+                  }}
+                />
+              </a>
+              <ul className="scrollable__content py-2">
+                {/* BEGIN: First Child */}
+                {formattedMenu.map((menu, menuKey) =>
+                  menu == "devider" ? (
+                    <li className="menu__devider my-6" key={menu + menuKey}></li>
+                  ) : (
+                    <li key={menu + menuKey}>
+                      <a
+                        href={menu.subMenu ? "#" : menu.pathname}
+                        className={classnames({
+                          menu: true,
+                          "menu--active": menu.active,
+                          "menu--open": menu.activeDropdown,
+                        })}
+                        onClick={(event) => {
+                          event.preventDefault();
+                          linkTo(menu, navigate, setActiveMobileMenu);
+                          setFormattedMenu($h.toRaw(formattedMenu));
+                        }}
+                      >
+                        <div className="menu__icon">
+                          <Lucide icon={menu.icon} />
+                        </div>
+                        <div className="menu__title">
+                          {menu.title}
+                          {menu.subMenu && (
+                            <div
+                              className={classnames({
+                                "menu__sub-icon": true,
+                                "transform rotate-180": menu.activeDropdown,
+                              })}
+                            >
+                              <Lucide icon="ChevronDown" />
+                            </div>
+                          )}
+                        </div>
+                      </a>
+                      {/* BEGIN: Second Child */}
+                      {menu.subMenu && (
+                        <Transition
+                          in={menu.activeDropdown}
+                          onEnter={enter}
+                          onExit={leave}
+                          timeout={300}
+                        >
+                          <ul
+                            className={classnames({
+                              "menu__sub-open": menu.activeDropdown,
+                            })}
+                          >
+                            {menu.subMenu.map((subMenu, subMenuKey) => (
+                              <li key={subMenuKey}>
+                                <a
+                                  href={subMenu.subMenu ? "#" : subMenu.pathname}
+                                  className={classnames({
+                                    menu: true,
+                                    "menu--active": subMenu.active,
+                                  })}
+                                  onClick={(event) => {
+                                    event.preventDefault();
+                                    linkTo(subMenu, navigate, setActiveMobileMenu);
+                                    setFormattedMenu($h.toRaw(formattedMenu));
+                                  }}
+                                >
+                                  <div className="menu__icon">
+                                    <Lucide icon="Activity" />
+                                  </div>
+                                  <div className="menu__title">
+                                    {subMenu.title}
+                                    {subMenu.subMenu && (
+                                      <div
+                                        className={classnames({
+                                          "menu__sub-icon": true,
+                                          "transform rotate-180":
+                                            subMenu.activeDropdown,
+                                        })}
+                                      >
+                                        <Lucide icon="ChevronDown" />
+                                      </div>
+                                    )}
+                                  </div>
+                                </a>
+                                {/* BEGIN: Third Child */}
+                                {subMenu.subMenu && (
+                                  <Transition
+                                    in={subMenu.activeDropdown}
+                                    onEnter={enter}
+                                    onExit={leave}
+                                    timeout={300}
+                                  >
+                                    <ul
+                                      className={classnames({
+                                        "menu__sub-open": subMenu.activeDropdown,
+                                      })}
+                                    >
+                                      {subMenu.subMenu.map(
+                                        (lastSubMenu, lastSubMenuKey) => (
+                                          <li key={lastSubMenuKey}>
+                                            <a
+                                              href={
+                                                lastSubMenu.subMenu
+                                                  ? "#"
+                                                  : lastSubMenu.pathname
+                                              }
+                                              className={classnames({
+                                                menu: true,
+                                                "menu--active": lastSubMenu.active,
+                                              })}
+                                              onClick={(event) => {
+                                                event.preventDefault();
+                                                linkTo(
+                                                  lastSubMenu,
+                                                  navigate,
+                                                  setActiveMobileMenu
+                                                );
+                                              }}
+                                            >
+                                              <div className="menu__icon">
+                                                <Lucide icon="Zap" />
+                                              </div>
+                                              <div className="menu__title">
+                                                {lastSubMenu.title}
+                                              </div>
+                                            </a>
+                                          </li>
+                                        )
+                                      )}
+                                    </ul>
+                                  </Transition>
+                                )}
+                                {/* END: Third Child */}
+                              </li>
+                            ))}
+                          </ul>
+                        </Transition>
+                      )}
+                      {/* END: Second Child */}
+                    </li>
+                  )
+                )}
+                {/* END: First Child */}
+              </ul>
+            </div>
         </div>
       </div>
       {/* END: Top Bar */}
-    </>
+    </div>
   );
 }
 

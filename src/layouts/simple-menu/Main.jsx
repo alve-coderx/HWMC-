@@ -58,7 +58,7 @@ function Main() {
   return (
     <div className="block lg:block md:block xl:block 2xl:block">
       <MobileMenu />
-      <div className="flex mt-[1.2rem] md:mt-0 sm:mt-0">
+      <div className="flex mt-[-1rem] lg:mr-0 mr-[-3rem] ml-[-1rem] md:mt-0 sm:mt-0">
         {/* BEGIN: Simple Menu */}
         <nav className="side-nav side-nav--simple fixed top-0">
           <Link to="/" className="intro-x flex items-center  pt-4">

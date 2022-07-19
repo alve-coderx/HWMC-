@@ -7,12 +7,17 @@ const sideMenu = atom({
       {
         icon: "Home",
         pathname: "/",
-        title: "Page 1",
+        title: "Overview Dashboard",
       },
       {
-        icon: "Home",
-        pathname: "/page-2",
-        title: "Page 2",
+        icon: "ArrowLeftRight",
+        pathname: "/swap",
+        title: "Swap",
+      },
+      {
+        icon: "Axe",
+        pathname: "/sart-contract",
+        title: "Manage Smart Contract",
       },
     ],
   },

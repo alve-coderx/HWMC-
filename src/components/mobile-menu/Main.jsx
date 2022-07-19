@@ -7,7 +7,6 @@ import { useRecoilValue } from "recoil";
 import { nestedMenu } from "@/layouts/side-menu";
 import { toggleMobileMenu, linkTo, enter, leave } from "./index";
 import { Lucide } from "@/base-components";
-import logoUrl from "@/assets/images/logo-icon.png";
 import classnames from "classnames";
 import dom from "@left4code/tw-starter/dist/js/dom";
 import SimpleBar from "simplebar";
@@ -35,13 +34,6 @@ function Main(props) {
         })}
       >
         <div className="mobile-menu-bar">
-          <a href="" className="flex mr-auto">
-            <img
-              alt="Hydro Whales Mining Club Dashboard"
-              className="w-6"
-              src={logoUrl}
-            />
-          </a>
           <a
             href="#"
             onClick={(e) => e.preventDefault()}
@@ -56,7 +48,8 @@ function Main(props) {
             />
           </a>
         </div>
-        <div className="scrollable">
+    
+        <div className="scrollable" >
           <a
             href="#"
             onClick={(e) => e.preventDefault()}

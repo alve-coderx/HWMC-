@@ -1,5 +1,4 @@
 .mobile-menu {
-  @apply w-full fixed bg-primary/90 z-[60] border-b border-white/[0.08] -mt-20 -mx-8 mb-6;
   &:before {
     content: "";
     @apply w-full h-screen z-10 fixed inset-x-0 bg-black/90 invisible opacity-0 transition-opacity duration-200 ease-in-out;
@@ -17,17 +16,17 @@
     }
   }
   @include media-breakpoint-down(sm) {
-    @apply -mx-3;
+    @apply -mx-1;
   }
   .mobile-menu-bar {
-    height: 70px;
+    height: 0px;
     @apply px-8 flex items-center;
     @include media-breakpoint-down(sm) {
       @apply px-3;
     }
   }
   .scrollable {
-    @apply h-screen z-20 fixed top-0 left-0 w-[270px] -ml-[100%] bg-primary transition-all duration-300 ease-in-out;
+    @apply h-screen z-20 fixed top-0 left-0 w-[270px] -ml-[100%]  transition-all duration-300 ease-in-out;
     .mobile-menu-toggler {
       @apply fixed top-0 right-0 mt-4 mr-4 invisible opacity-0 transition-opacity duration-200 ease-in-out;
     }

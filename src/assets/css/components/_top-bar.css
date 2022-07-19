@@ -1,5 +1,5 @@
 .top-bar {
-    @apply flex items-center mb-2;
+    @apply flex items-center;
     background: #01010100;
     height: 67px;
     z-index: 51;

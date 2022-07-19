@@ -72,7 +72,7 @@ function Main() {
 
   return (
     <>
-    <div className="grid lg:grid-cols-3 md:grid-cols-3  gap-4 font-neuePlak" style={{minWidth: "380px"}}>
+    <div className="grid lg:grid-cols-3 md:grid-cols-3 gap-4 font-neuePlak" style={{minWidth: "380px",paddingRight:"38px"}}>
     <div className="lg:col-span-2 md:col-span-2">
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
           {/* ----------------- First Card Start ----------------- */}
@@ -171,11 +171,79 @@ function Main() {
 
     {/* ----------------- Fourth Card Start ----------------- */}
    
+  
+
       
           {/* ----------------- Fourth Card End ----------------- */}
 
           <div className="lg:col-span-1 md:col-span-1">
+          <div className="mb-3">
+                <div className="flex items-center box px-5 py-3 ml-4 flex-1 zoom-in mb-2">
+                  <div>
+                    <div className="flex items-center">
+                      <div className="font-medium text-dark dark:text-white">
+                        Public Mint
+                      </div>
+                      
+                    </div>
+                    <div className="text-slate-500">
+                      <div className="mt-1">
+                        Mint on the current price
+                        
+                      </div>
+                    
+                    </div>
+                  </div>
+                  <div className="text-xs text-slate-500 ml-auto">
+                      <AiOutlineArrowRight/>
+                  </div>
+                </div>
+                <div className="flex items-center box px-5 py-3 ml-4 flex-1 zoom-in mb-2" style={{background : '#8368d1'}}>
+                  <div>
+                    <div className="flex items-center">
+                      <div className="font-medium text-dark dark:text-white">
+                        Public Mint
+                      </div>
+                      
+                    </div>
+                    <div className="text-slate-500">
+                      <div className="mt-1">
+                        Mint on the current price
+                        
+                      </div>
+                    
+                    </div>
+                  </div>
+                  <div className="text-xs text-slate-500 ml-auto">
+                      <AiOutlineArrowRight/>
+                  </div>
+                </div>
+                <div className="flex items-center box px-5 py-3 ml-4 flex-1 zoom-in mb-2">
+                  <div>
+                    <div className="flex items-center">
+                      <div className="font-medium text-dark dark:text-white">
+                        Public Mint
+                      </div>
+                      
+                    </div>
+                    <div className="text-slate-500">
+                      <div className="mt-1">
+                        Mint on the current price
+                        
+                      </div>
+                    
+                    </div>
+                  </div>
+                  <div className="text-xs text-slate-500 ml-auto">
+                      <AiOutlineArrowRight/>
+                  </div>
+                </div>
+              </div>
+                
               <div className="relative before:block before:absolute before:w-px before:h-[85%] before:bg-slate-200 before:dark:bg-darkmode-400 before:ml-5 before:mt-5">
+              
+              
+                
                 <div className="intro-x relative flex items-center mb-3">
                   <div className="before:block before:absolute before:w-20 before:h-px before:bg-slate-200 before:dark:bg-darkmode-400 before:mt-5 before:ml-5">
                     <div className="w-10 h-10 flex-none image-fit rounded-full overflow-hidden">

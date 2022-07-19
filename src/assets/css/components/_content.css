@@ -1,12 +1,11 @@
 .content {
-    /* margin-left:84px; */
+    padding: 25px 25px 25px 25px;
     @apply md:ml-[84px] ;
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
-    padding: 0px 22px;
     @apply min-w-0 min-h-screen bg-slate-100 flex-1 pb-10 dark:bg-[#010101];
     @include media-breakpoint-down(md) {
-        @apply px-4 max-w-full;
+        @apply max-w-full;
     }
     &:before {
         content: "";
